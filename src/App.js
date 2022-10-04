@@ -1,7 +1,9 @@
+import DetailsSummary from './components/DetailsSummary';
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <DetailsSummary />
     </div>
   );
 }
