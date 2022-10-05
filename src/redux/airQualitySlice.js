@@ -1,34 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
-// import axios from 'axios';
+import { nanoid, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { airQualityURL } from '../data/apiData';
 
 const initialState = {
-  airQuality: {
-    coord: {
-      lon: -0.092,
-      lat: 51.5156,
-    },
-    list: [
-      {
-        main: {
-          aqi: 2,
-        },
-        components: {
-          co: 178.58,
-          no: 0.64,
-          no2: 10.11,
-          o3: 82.25,
-          so2: 6.2,
-          pm2_5: 2.59,
-          pm10: 3.63,
-          nh3: 0.12,
-        },
-        dt: 1664889997,
-      },
-    ],
-  },
+  airQuality: {},
   status: 'idle',
   error: 'null',
 };
+
+export const fetchAirQuality = createAsyncThunk(
+  'airQuality/fetchAirQuality',
+  async (coordinates) => {
+    console.log(coordinates);
+    try {
+      const response = await axios.get(
+        airQualityURL(coordinates.lat, coordinates.lon),
+      );
+      return response.data;
+    } catch (err) {
+      throw new Error(err);
+    }
+  },
+);
 
 const airQualitySlice = createSlice({
   name: 'airQuality',
