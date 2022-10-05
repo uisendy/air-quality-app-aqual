@@ -16,6 +16,19 @@ const SearchResults = ({}) => {
   const status = useSelector(getStatus);
   const error = useSelector(getError);
 
+  const queryAirQuality = (lat, lon) => {
+    if (addRequestStatus === 'idle') {
+      try {
+        setAddRequestStatus('pending');
+        dispatch(fetchAirQuality({ lat, lon })).unwrap();
+      } catch (err) {
+        throw new Error(err);
+      } finally {
+        setAddRequestStatus('idle');
+      }
+    }
+  };
+
   let content;
 
   if (status === 'Loading') {
