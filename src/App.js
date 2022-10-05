@@ -3,9 +3,8 @@ import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-[440px] h-screen mx-auto bg-gray-300 overflow-hidden">
       <HomePage />
-      <DetailsSummary />
     </div>
   );
 }
