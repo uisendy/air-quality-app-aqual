@@ -27,6 +27,20 @@ const airQualitySlice = createSlice({
   name: 'airQuality',
   initialState,
   reducers: {},
+  extraReducers(builder) {
+    builder
+      .addCase(fetchAirQuality.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchAirQuality.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.airQuality = action.payload;
+      })
+      .addCase(fetchAirQuality.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  },
 });
 
 export const getAirQuality = (state) => state.airQuality.airQuality;
