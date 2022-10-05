@@ -12,6 +12,8 @@ import {
   Link,
 } from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage';
+import SearchPage from './pages/SearchPage';
+import DetailsPage from './pages/DetailsPage';
 
 const router = createBrowserRouter([
   {
@@ -20,8 +22,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: 'about',
-    element: <div>About</div>,
+    path: 'search',
+    element: <SearchPage />,
+  },
+  {
+    path: 'search/details',
+    element: <DetailsPage />,
   },
 ]);
 
