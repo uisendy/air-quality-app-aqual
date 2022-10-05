@@ -32,9 +32,7 @@ const searchLocationsSlice = createSlice({
       .addCase(fetchLocation.fulfilled, (state, action) => {
         state.status = 'succeeded';
         const loadedData = action.payload.map((payload) => {
-          const {
-            name, lat, lon, country, state,
-          } = payload;
+          const { name, lat, lon, country, state } = payload;
           return {
             id: nanoid(),
             name,
