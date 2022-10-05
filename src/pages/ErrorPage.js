@@ -5,7 +5,7 @@ const ErrorPage = () => {
   return (
     <div
       id="error-page"
-      className=" w-[440px] flex flex-col justify-center h-screen items-center mx-auto bg-gray-300"
+      className=" w-[440px] flex flex-col justify-center h-screen items-center mx-auto bg-gray-100 overflow-hidden"
     >
       <div className="w-[100vw] flex flex-col justify-center h-full items-center gap-5">
         <h1 className=" text-3xl">Oops!</h1>
@@ -14,7 +14,7 @@ const ErrorPage = () => {
           <i>{error.statusText || error.message}</i>
         </p>
         <Link to={'/'}>
-          <button class="block uppercase mx-auto shadow bg-green-800 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">
+          <button className="block uppercase mx-auto shadow bg-green-800 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">
             Home
           </button>
         </Link>
