@@ -59,6 +59,28 @@ const Forcast = ({ airQuality }) => {
               },
             ],
           }}
+          options={{
+            responsive: true,
+            scales: {
+              x: {
+                grid: {
+                  display: false,
+                },
+              },
+              y: {
+                grid: {
+                  display: false,
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                position: 'none',
+              },
+            },
+          }}
+          height={300}
+          width={380}
         />
       </div>
     );
