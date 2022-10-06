@@ -10,13 +10,12 @@ const initialState = {
 
 export const fetchAirQuality = createAsyncThunk(
   'airQuality/fetchAirQuality',
-  async (coordinates) => {
-    console.log(coordinates);
+  async (location) => {
     try {
       const response = await axios.get(
-        airQualityURL(coordinates.lat, coordinates.lon),
+        airQualityURL(location.lat, location.lon),
       );
-      return response.data;
+      return { ...response.data, location: location };
     } catch (err) {
       throw new Error(err);
     }
@@ -34,7 +33,14 @@ const airQualitySlice = createSlice({
       })
       .addCase(fetchAirQuality.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.airQuality = action.payload;
+        const { list, location } = action.payload;
+        const { main, dt, components } = list[0];
+        state.airQuality = {
+          main: { ...main },
+          dt,
+          components: { ...components },
+          location: { ...location },
+        };
       })
       .addCase(fetchAirQuality.rejected, (state, action) => {
         state.status = 'failed';
@@ -44,5 +50,7 @@ const airQualitySlice = createSlice({
 });
 
 export const getAirQuality = (state) => state.airQuality.airQuality;
+export const getStatus = (state) => state.airQuality.status;
+export const getError = (state) => state.airQuality.error;
 
 export default airQualitySlice.reducer;
