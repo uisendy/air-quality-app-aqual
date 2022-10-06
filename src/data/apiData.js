@@ -62,4 +62,7 @@ export const handleRatings = (data = aqiRatings, aqi) =>
 export const handleColorMap = (dataArr) =>
   dataArr.map((aqi) => handleRatings(aqiRatings, aqi)[0].color);
 
+export const handleBorderColorMap = (dataArr) =>
+  dataArr.map((aqi) => handleRatings(aqiRatings, aqi)[0].borderColor);
+
 export default aqiRatings;
