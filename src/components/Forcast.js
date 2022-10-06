@@ -20,6 +20,15 @@ const Forcast = ({ airQuality }) => {
   const status = useSelector(getStatus);
   const error = useSelector(getError);
 
+  const aqiData = [];
+  const timeLabel = [];
+  forcastAq?.map(
+    (data) => (aqiData.push(data.main?.aqi), timeLabel.push(data.time)),
+  );
+
+  const color = handleColorMap(aqiData);
+  const borderColor = handleBorderColorMap(aqiData);
+
   useEffect(() => {
     if (status === 'idle' && Object.keys(airQuality).length) {
       dispatch(fetchForcastAq(airQuality.location));
