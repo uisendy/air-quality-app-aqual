@@ -5,7 +5,7 @@ const ErrorPage = () => {
   return (
     <div
       id="error-page"
-      className=" w-[440px] flex flex-col justify-center h-screen items-center mx-auto bg-gray-100 overflow-hidden"
+      className=" relative max-w-[440px] w-[100vw] min-h-[100vh] mx-auto bg-gray-100 flex flex-col justify-center "
     >
       <div className="w-[100vw] flex flex-col justify-center h-full items-center gap-5">
         <h1 className=" text-3xl">Oops!</h1>
