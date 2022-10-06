@@ -16,11 +16,11 @@ const SearchResults = ({}) => {
   const status = useSelector(getStatus);
   const error = useSelector(getError);
 
-  const queryAirQuality = (lat, lon) => {
+  const queryAirQuality = (location) => {
     if (addRequestStatus === 'idle') {
       try {
         setAddRequestStatus('pending');
-        dispatch(fetchAirQuality({ lat, lon })).unwrap();
+        dispatch(fetchAirQuality(location)).unwrap();
       } catch (err) {
         throw new Error(err);
       } finally {
@@ -31,8 +31,12 @@ const SearchResults = ({}) => {
 
   let content;
 
-  if (status === 'Loading') {
-    content = <p>&quot,loading...&quot,</p>;
+  if (status === 'loading') {
+    content = (
+      <p className=" text-gray-400 font-Roboto text-center w-full mx-auto">
+        Loading Data...
+      </p>
+    );
   } else if (status === 'succeeded') {
     content = (
       <ul className="flex flex-col gap-3 h-full">
@@ -49,7 +53,7 @@ const SearchResults = ({}) => {
             <Link to={'details'} key={location.id}>
               <li
                 className=" rounded-xl bg-white h-20 px-10 py-2 flex flex-col justify-center items-start drop-shadow"
-                onClick={() => queryAirQuality(location.lat, location.lon)}
+                onClick={() => queryAirQuality(location)}
               >
                 <p className=" font-bold text-lg ">{location.name}</p>
                 <p>
@@ -64,7 +68,7 @@ const SearchResults = ({}) => {
       </ul>
     );
   } else if (status === 'failed') {
-    content = <p>{error}</p>;
+    content = <p className="text-red-400 font-Roboto">{error}</p>;
   }
 
   return <div className="w-[87%] font-Roboto mx-auto pt-10 ">{content}</div>;
