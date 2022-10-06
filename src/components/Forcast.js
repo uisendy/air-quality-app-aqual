@@ -44,6 +44,22 @@ const Forcast = ({ airQuality }) => {
       <div className="">
         <h3 className="text-xl font-medium pb-1 pt-3 text-center ">Forcast</h3>
         <p>Time</p>
+        <Bar
+          data={{
+            labels: timeLabel,
+            datasets: [
+              {
+                label: 'Time',
+                data: aqiData,
+                borderColor: borderColor,
+                backgroundColor: color,
+                borderWidth: 2,
+                borderRadius: 20,
+                borderSkipped: false,
+              },
+            ],
+          }}
+        />
       </div>
     );
   } else if (status === 'failed') {
