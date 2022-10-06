@@ -35,6 +35,21 @@ const Forcast = ({ airQuality }) => {
     }
   }, [airQuality]);
 
+  let content;
+
+  if (status === 'loading') {
+    content = <p className=" text-gray-400 font-Roboto">Loading...</p>;
+  } else if (status === 'succeeded') {
+    content = (
+      <div className="">
+        <h3 className="text-xl font-medium pb-1 pt-3 text-center ">Forcast</h3>
+        <p>Time</p>
+      </div>
+    );
+  } else if (status === 'failed') {
+    content = <p className="text-red-400 font-Roboto">{error}</p>;
+  }
+
   return <div>{content}</div>;
 };
 
