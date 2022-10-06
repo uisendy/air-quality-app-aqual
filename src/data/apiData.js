@@ -56,4 +56,7 @@ export const aqiRatings = [
   },
 ];
 
+export const handleRatings = (data = aqiRatings, aqi) =>
+  data.filter((ratings) => ratings.aqi === aqi);
+
 export default aqiRatings;
