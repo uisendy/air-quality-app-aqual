@@ -59,4 +59,7 @@ export const aqiRatings = [
 export const handleRatings = (data = aqiRatings, aqi) =>
   data.filter((ratings) => ratings.aqi === aqi);
 
+export const handleColorMap = (dataArr) =>
+  dataArr.map((aqi) => handleRatings(aqiRatings, aqi)[0].color);
+
 export default aqiRatings;
