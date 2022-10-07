@@ -39,8 +39,10 @@ const forcastAqSlice = createSlice({
           const dateTime = new Date(dt * 1000);
           const date = dateTime.toLocaleDateString('en-US');
           const hours = dateTime.getHours();
-          const minutes = '0' + dateTime.getMinutes();
-          return { id: nanoid(), date, time: `${hours}:${minutes}`, main };
+          const minutes = `0${dateTime.getMinutes()}`;
+          return {
+            id: nanoid(), date, time: `${hours}:${minutes}`, main,
+          };
         });
         state.forcastAq = dataStream.splice(1, 25);
       })
