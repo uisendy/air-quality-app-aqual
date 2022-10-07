@@ -1,9 +1,8 @@
-import DetailsSummary from './components/DetailsSummary';
 import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <div className="w-[440px] h-screen mx-auto bg-gray-300 overflow-hidden">
+    <div className="max-w-[440px] w-[100vw] min-h-[100vh] mx-auto">
       <HomePage />
     </div>
   );
