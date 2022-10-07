@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { nanoid } from '@reduxjs/toolkit';
 
-const APP_ID = '7771f6d8da515cc8943b9f6d81e4afc8';
+const APP_ID = '05cac1b6e91db3212d68b7e40d3755c6';
 const AP_BASE_URL = 'http://api.openweathermap.org/data/2.5/air_pollution?';
 const FORCAST_AP_BASE_URL =
   'http://api.openweathermap.org/data/2.5/air_pollution/forecast?';
