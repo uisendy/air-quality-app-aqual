@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouteError, Link } from 'react-router-dom';
+
 const ErrorPage = () => {
   const error = useRouteError();
   return (
@@ -13,8 +14,11 @@ const ErrorPage = () => {
         <p>
           <i>{error.statusText || error.message}</i>
         </p>
-        <Link to={'/'}>
-          <button className="block uppercase mx-auto shadow bg-green-800 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">
+        <Link to="/">
+          <button
+            type="button"
+            className="block uppercase mx-auto shadow bg-green-800 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded"
+          >
             Home
           </button>
         </Link>
