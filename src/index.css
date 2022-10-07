@@ -8,3 +8,11 @@
 body {
   background-color: whitesmoke;
 }
+
+.home__section {
+  background-color:hsla(158,65%,92%,1);
+  background-image:
+    radial-gradient(at 0% 100%, hsla(15,0%,100%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(157,97%,72%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(340,16%,91%,1) 0px, transparent 50%);
+}
