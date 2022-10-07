@@ -1,8 +1,9 @@
 import React from 'react';
-import aqiRatings from '../data/apiData';
-import { handleRatings } from '../data/apiData';
+import { aqiRatings, handleRatings } from '../data/apiData';
 
-const DetailsSummary = ({ airQuality, status, error }) => {
+const DetailsSummary = ({
+  airQuality, status, error, summary,
+}) => {
   let content;
   if (airQuality.main) {
     const filter = handleRatings(aqiRatings, airQuality?.main?.aqi)[0];
@@ -18,9 +19,7 @@ const DetailsSummary = ({ airQuality, status, error }) => {
                 backgroundColor: `${filter.borderColor}`,
               }}
             >
-              <p className=" font-light text-white text-5xl ">
-                {airQuality.main.aqi}
-              </p>
+              <p className=" font-light text-white text-5xl ">{airQuality.main.aqi}</p>
               <small className=" font-medium text-white">AQI</small>
             </div>
             <div>
@@ -35,13 +34,14 @@ const DetailsSummary = ({ airQuality, status, error }) => {
             </div>
           </div>
           <p className=" font-Roboto pt-5 font-bold">
-            Air Quality is{' '}
-            <span style={{ color: `${filter.borderColor}` }}>
-              {filter.rating}
-            </span>{' '}
-            at the moment
+            Air Quality is
+            {' '}
+            <span style={{ color: `${filter.borderColor}` }}>{filter.rating}</span>
+            {' '}
+            at the
+            moment
           </p>
-          <p className="pt-3 font-Roboto">{filter.comment}</p>
+          {summary ? <p className="pt-3 font-Roboto">{filter.comment}</p> : null}
         </>
       );
     } else if (status === 'failed') {
