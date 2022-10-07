@@ -71,7 +71,18 @@ const HomePage = () => {
         </Link>
       </nav>
 
-      
+      <div className="rounded-xl bg-white px-4 py-2 pb-4 mb-4 flex flex-col justify-center items-start drop-shadow">
+        <div className="text-l font-medium text-gray-600 pb-3 border-b border-solid border-gray-300 px-3 ">
+          <h3>Home</h3>
+        </div>
+        <DetailsSummary
+          airQuality={airQuality}
+          status={status}
+          error={error}
+          summary={false}
+        />
+      </div>
+    </div>
   );
 };
 
