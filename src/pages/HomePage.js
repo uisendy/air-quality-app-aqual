@@ -82,6 +82,29 @@ const HomePage = () => {
           summary={false}
         />
       </div>
+      <div>
+        <div className=" bg-white rounded-2xl drop-shadow-sm mt-3 pt-4 pb-2 font-Roboto">
+          <div className="flex justify-between pb-3 border-b border-solid border-gray-300 px-3">
+            <h3 className="text-l font-medium text-gray-600 ">Other Major Cities</h3>
+          </div>
+          <div>
+            <ul className="pt-2 px-2 w-full font-Roboto text-sm text-gray-400 font-bold grid grid-cols-2 gap-2">
+              {otherLocation.map((location) => (
+                <Link
+                  to="search/details"
+                  key={location.id}
+                  onClick={() => handleShowDetails(location)}
+                >
+                  <li className=" rounded-lg border  border-gray-300 border-solid px-2 py-2 flex justify-between">
+                    <p>{location.name}</p>
+                    <p className="text-gray-600">{location.country}</p>
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
