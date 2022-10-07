@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Bar } from 'react-chartjs-2';
+import Chart from 'chart.js/auto';
+import { CategoryScale } from 'chart.js';
+import moment from 'moment';
+import { handleBorderColorMap, handleColorMap } from '../data/apiData';
 import {
   getforcastAq,
   getError,
   getStatus,
   fetchForcastAq,
 } from '../redux/forcastAqSlice';
-import { handleColorMap } from '../data/apiData';
-import { handleBorderColorMap } from '../data/apiData';
-import { Bar } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
-import { CategoryScale } from 'chart.js';
-import moment from 'moment';
 
 const Forcast = ({ airQuality }) => {
+  const [addRequestStatus, setAddRequestStatus] = useState('idle');
   Chart.register(CategoryScale);
   const dispatch = useDispatch();
 
@@ -23,18 +23,26 @@ const Forcast = ({ airQuality }) => {
 
   const aqiData = [];
   const timeLabel = [];
-  forcastAq?.map(
-    (data) => (aqiData.push(data.main?.aqi), timeLabel.push(data.time)),
-  );
+  forcastAq?.forEach((data) => {
+    aqiData.push(data.main?.aqi);
+    timeLabel.push(data.time);
+  });
 
   const color = handleColorMap(aqiData);
   const borderColor = handleBorderColorMap(aqiData);
 
   useEffect(() => {
-    if (status === 'idle' && Object.keys(airQuality).length) {
-      dispatch(fetchForcastAq(airQuality.location));
+    if (addRequestStatus === 'idle' && Object.keys(airQuality).length) {
+      try {
+        setAddRequestStatus('pending');
+        dispatch(fetchForcastAq(airQuality.location)).unwrap();
+      } catch (err) {
+        throw new Error(err);
+      } finally {
+        setAddRequestStatus('idle');
+      }
     }
-  }, [airQuality]);
+  }, [airQuality, dispatch]);
 
   let content;
 
@@ -44,7 +52,7 @@ const Forcast = ({ airQuality }) => {
     content = (
       <div className=" bg-white rounded-2xl drop-shadow-sm mt-3 py-4 font-Roboto">
         <div className="flex justify-between pb-3 border-b border-solid border-gray-300 px-3">
-          <h3 className="text-l font-medium text-gray-600 ">Forcast</h3>
+          <h3 className="text-l font-medium text-gray-600 ">Next Hours</h3>
           <small className=" font-light text-gray-400">
             {' '}
             Updated:
@@ -57,9 +65,9 @@ const Forcast = ({ airQuality }) => {
               labels: timeLabel,
               datasets: [
                 {
-                  label: 'time',
+                  label: 'AQI',
                   data: aqiData,
-                  borderColor: borderColor,
+                  borderColor,
                   backgroundColor: color,
                   borderWidth: 2,
                   borderRadius: 20,
