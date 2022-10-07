@@ -105,6 +105,18 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <Link
+        className="group font-Roboto mx-10 mt-3 flex items-center justify-between rounded-2xl border border-current px-5 py-3 text-gray-500 transition-colors hover:bg-gray-600 focus:outline-none focus:ring active:bg-gray-500"
+        to="search"
+      >
+        <span className="font-medium transition-colors group-hover:text-white">
+          Search other Locations
+        </span>
+
+        <span className="ml-4 flex-shrink-0 rounded-full border border-gray-600  p-2 group-active:border-gray-500">
+          <HiSearchCircle />
+        </span>
+      </Link>
     </div>
   );
 };
