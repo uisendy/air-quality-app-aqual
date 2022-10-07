@@ -1,4 +1,4 @@
-import { nanoid, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { airQualityURL } from '../data/apiData';
 
@@ -8,19 +8,14 @@ const initialState = {
   error: 'null',
 };
 
-export const fetchAirQuality = createAsyncThunk(
-  'airQuality/fetchAirQuality',
-  async (location) => {
-    try {
-      const response = await axios.get(
-        airQualityURL(location.lat, location.lon),
-      );
-      return { ...response.data, location: location };
-    } catch (err) {
-      throw new Error(err);
-    }
-  },
-);
+export const fetchAirQuality = createAsyncThunk('airQuality/fetchAirQuality', async (location) => {
+  try {
+    const response = await axios.get(airQualityURL(location.lat, location.lon));
+    return { ...response.data, location };
+  } catch (err) {
+    throw new Error(err);
+  }
+});
 
 const airQualitySlice = createSlice({
   name: 'airQuality',
