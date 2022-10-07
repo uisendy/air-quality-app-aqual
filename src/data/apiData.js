@@ -1,3 +1,6 @@
+/* eslint-disable */
+import { nanoid } from '@reduxjs/toolkit';
+
 const APP_ID = '7771f6d8da515cc8943b9f6d81e4afc8';
 const AP_BASE_URL = 'http://api.openweathermap.org/data/2.5/air_pollution?';
 const FORCAST_AP_BASE_URL =
@@ -5,6 +8,7 @@ const FORCAST_AP_BASE_URL =
 const GEO_BASE_URL = 'http://api.openweathermap.org/geo/1.0/direct?';
 const limit = 5;
 
+// FIXME: Fixed implicit-arrow-linebreak, but broke max-len
 export const geoURL = (location) =>
   `${GEO_BASE_URL}q=${location}&limit=${limit}&appid=${APP_ID}`;
 
@@ -27,8 +31,7 @@ export const aqiRatings = [
     color: 'rgb(156, 234, 82, 0.5)',
     borderColor: 'rgb(156, 234, 82)',
     rating: 'Good',
-    comment:
-      'Some pollutants may slightly affect very few hypersensitive individuals.',
+    comment: 'Some pollutants may slightly affect very few hypersensitive individuals.',
   },
   {
     aqi: 3,
@@ -56,6 +59,62 @@ export const aqiRatings = [
   },
 ];
 
+export const otherLocation = [
+  {
+    id: '_1Hh9jXsH7qaOk1pHfiaI',
+    name: 'Amsterdam',
+    lat: 52.3727598,
+    lon: 4.8936041,
+    country: 'NL',
+    state: 'North Holland',
+    favorite: false,
+  },
+  {
+    id: 'b-GpErGjLPxMwZbS_3WlM',
+    name: 'Abuja',
+    lat: 9.0643305,
+    lon: 7.4892974,
+    country: 'NG',
+    state: 'Federal Capital Territory',
+    favorite: false,
+  },
+  {
+    id: 'CbYsXb_Dy0LmfAHjlhsGi',
+    name: 'Sydney',
+    lat: -33.8698439,
+    lon: 151.2082848,
+    country: 'AU',
+    state: 'New South Wales',
+    favorite: false,
+  },
+  {
+    id: 'T99ZosQnD90gBpS8vsks1',
+    name: 'London',
+    lat: 51.5073219,
+    lon: -0.1276474,
+    country: 'GB',
+    state: 'England',
+    favorite: false,
+  },
+  {
+    id: '8sW7o86uMYkWsSrKMpN7a',
+    name: 'Tunis',
+    lat: 36.8002068,
+    lon: 10.1857757,
+    country: 'TN',
+    state: 'Tunis',
+    favorite: false,
+  },
+  {
+    id: 'N2O6Cpgmt3-j6pj0J95iS',
+    name: 'Shanghai',
+    lat: 31.2322758,
+    lon: 121.4692071,
+    country: 'CN',
+    favorite: false,
+  },
+];
+
 export const handleRatings = (data = aqiRatings, aqi) =>
   data.filter((ratings) => ratings.aqi === aqi);
 
@@ -64,5 +123,3 @@ export const handleColorMap = (dataArr) =>
 
 export const handleBorderColorMap = (dataArr) =>
   dataArr.map((aqi) => handleRatings(aqiRatings, aqi)[0].borderColor);
-
-export default aqiRatings;
