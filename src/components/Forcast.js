@@ -42,7 +42,7 @@ const Forcast = ({ airQuality }) => {
         setAddRequestStatus('idle');
       }
     }
-  }, [airQuality, dispatch]);
+  }, [airQuality, dispatch, addRequestStatus]);
 
   let content;
 

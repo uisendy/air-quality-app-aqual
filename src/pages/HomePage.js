@@ -51,7 +51,7 @@ const HomePage = () => {
         setAddRequestStatus('idle');
       }
     }
-  }, []);
+  }, [addRequestStatus, dispatch, location]);
 
   return (
     <div className="home__section relative min-h-screen px-4">
