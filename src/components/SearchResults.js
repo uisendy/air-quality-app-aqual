@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import {
-  getSearchLocations,
-  getStatus,
-  getError,
-} from '../redux/searchLocationsSlice';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { getSearchLocations, getStatus, getError } from '../redux/searchLocationsSlice';
 import { fetchAirQuality } from '../redux/airQualitySlice';
 
-const SearchResults = ({}) => {
+const SearchResults = () => {
   const [addRequestStatus, setAddRequestStatus] = useState('idle');
   const dispatch = useDispatch();
   const searchLocations = useSelector(getSearchLocations);
@@ -45,16 +40,19 @@ const SearchResults = ({}) => {
           <p className=" pt-20 text-center ">
             <span className=" font-bold text-lg text-white bg-red-400 px-2 py-1 rounded-full">
               No result!
-            </span>{' '}
-            <br /> Check you search details
+            </span>
+            {' '}
+            <br />
+            Check you search details
           </p>
         ) : (
           searchLocations.map((location) => (
-            <Link to={'details'} key={location.id}>
-              <li
-                className=" rounded-xl bg-white h-20 px-10 py-2 flex flex-col justify-center items-start drop-shadow"
-                onClick={() => queryAirQuality(location)}
-              >
+            <Link
+              to="details"
+              key={location.id}
+              onClick={() => queryAirQuality(location)}
+            >
+              <li className=" rounded-xl bg-white h-20 px-10 py-2 flex flex-col justify-center items-start drop-shadow">
                 <p className=" font-bold text-lg ">{location.name}</p>
                 <p>
                   {location.state}
@@ -68,7 +66,9 @@ const SearchResults = ({}) => {
       </ul>
     );
   } else if (status === 'failed') {
-    content = <p className="text-red-400 font-Roboto">{error}</p>;
+    content = (
+      <p className="text-red-400 font-Roboto w-full mx-auto text-center">{error}</p>
+    );
   }
 
   return <div className="w-[87%] font-Roboto mx-auto pt-10 ">{content}</div>;
