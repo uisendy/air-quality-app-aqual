@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Air Quality App - React Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+"AQUA" Air Quality App is an app for tracking air quality for and from any location. It connects to realtime data provided by [open weather](https://openweathermap.org/api).This app helps you to stay safe from air pollution in any country, city around the world. What you get from this app;
 
-## Available Scripts
+1. Location Search
+2. AQI - Air Quality Index for any location
+3. Air Quality forcast for the next 24Hours.
 
-In the project directory, you can run:
+## Video Presentation
 
-### `npm start`
+[Video Demo]()
+
+## Live Demo
+
+[View Live ]()
+
+## Built With
+
+- React-Redux
+- Tailwindcss
+- ChartJs
+
+- #### Testing
+
+  - Jest
+  - React Testing Library.
+
+- #### Deployment
+
+  - Netflify
+
+## Prerequisites
+
+- Git
+- GitHub
+- NPM
+- CRA
+- VS code editor
+
+# Getting Started with Math-Magicians webApp.
+
+** This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).**
+
+To get a local copy up and running follow these simple example steps.
+
+### Installations
+
+- On this GitHub repo, navigate to the main page of the repository. Above the list of files, click the Download icon and Code, copy the url,
+- Type git clone, and then paste the URL you copied earlier.
+  `$ git clone git@github.com:uisendy/math-magicians.git`
+- Install dependencies `$ npm install`
+
+### Starting on Local Server - `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Create a branch to work on your features
 
-### `npm test`
+- Make a pull request with your changes once you're done
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Author: Sendy Inieke
 
-### `npm run build`
+- Github: [@SendyIU](https://github.com/uisendy)
+- Twitter: [@sinieke](https://twitter.com/sinieke)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/surafel-getachew-80155b187/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🤝 Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contributions, issues, and feature requests are welcome!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Feel free to check the [issues](https://github.com/uisendy/Meal-webApp/issues) page.
 
-### `npm run eject`
+## Show your support
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Give a ⭐️ if you like this project!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📝 License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) licensed.
