@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[View Live ]()
+[View Live ](https://aqual.netlify.app/)
 
 ## Built With
 
