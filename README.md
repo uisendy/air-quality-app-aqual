@@ -67,9 +67,7 @@ Feel free to check the [issues](https://github.com/uisendy/Meal-webApp/issues) p
 
 ## 🥇 Acknowledgement
 
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues](https://github.com/uisendy/Meal-webApp/issues) page.
+UI design Original Design by [aga ciurysek](https://dribbble.com/agaciurysek) in [Live Air by Kaiterra app](https://dribbble.com/shots/14517071-Live-Air-by-Kaiterra-app)
 
 ## ⭐️ Show your support
 
