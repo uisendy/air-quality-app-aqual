@@ -2,11 +2,11 @@ import React from 'react';
 import { IoIosClose } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { HiSearchCircle } from 'react-icons/hi';
 import { getAirQuality, getError, getStatus } from '../redux/airQualitySlice';
 import DetailsSummary from '../components/DetailsSummary';
 import Forcast from '../components/Forcast';
 import ApComponents from '../components/ApComponents';
-import { HiSearchCircle } from 'react-icons/hi';
 
 const DetailsPage = () => {
   const airQuality = useSelector(getAirQuality);
