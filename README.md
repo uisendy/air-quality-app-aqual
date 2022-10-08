@@ -8,7 +8,7 @@
 
 ## Video Presentation
 
-[Video Demo]()
+[Video Demo](https://www.loom.com/share/dbed31d9c34b4e94989b09b98f6cd155)
 
 ## Live Demo
 
@@ -37,33 +37,27 @@
 - CRA
 - VS code editor
 
-# Getting Started with Math-Magicians webApp.
+## Getting Started with AQUA - Air Quality webApp.
 
-** This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).**
+**This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).** To get a local copy up and running follow these simple example steps.
 
-To get a local copy up and running follow these simple example steps.
-
-### Installations
+## Installations
 
 - On this GitHub repo, navigate to the main page of the repository. Above the list of files, click the Download icon and Code, copy the url,
 - Type git clone, and then paste the URL you copied earlier.
   `$ git clone git@github.com:uisendy/math-magicians.git`
 - Install dependencies `$ npm install`
 
-### Starting on Local Server - `npm start`
+## Starting on Local Server - `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-- Create a branch to work on your features
-
-- Make a pull request with your changes once you're done
+ Open [http://localhost:3000](http://localhost:3000) to view on browser.
 
 ## Author: Sendy Inieke
 
 - Github: [@SendyIU](https://github.com/uisendy)
 - Twitter: [@sinieke](https://twitter.com/sinieke)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/surafel-getachew-80155b187/)
+- LinkedIn: [inieke-sendy](https://www.linkedin.com/in/inieke-sendy-129b57ab/)
 
 ## 🤝 Contributing
 
@@ -71,9 +65,15 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues](https://github.com/uisendy/Meal-webApp/issues) page.
 
-## Show your support
+## 🥇 Acknowledgement
 
-Give a ⭐️ if you like this project!
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues](https://github.com/uisendy/Meal-webApp/issues) page.
+
+## ⭐️ Show your support
+
+Kindly star ⭐️ this project
 
 ## 📝 License
 
